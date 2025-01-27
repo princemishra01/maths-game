@@ -1,6 +1,8 @@
 const symbols = ['+', '-', '*', '/'];
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
+let txt = document.querySelector('#txt');
+
 function resetNumbers() {
     let nums = document.querySelectorAll('.num');
     nums.forEach(num => {
@@ -11,6 +13,7 @@ function resetNumbers() {
     let symbol = document.querySelector('.symbol');
     symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
     document.querySelector('#answer').textContent = '';
+    txt.textContent = "Press SPACE for Answer";
 }
 
 function fillAnswer() {
@@ -47,10 +50,10 @@ function fillAnswer() {
             break;
     }
 
-    console.log(num1, num2 ,result);
 
     answer.textContent = result;
-    console.log(answer.value);
+    txt.textContent = "Press SPACE for Next";
+
 }
 
 function pressSpaceKey(e) {
